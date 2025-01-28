@@ -13,7 +13,7 @@ import io.cucumber.junit.CucumberOptions;
         
         dryRun = false,  // If true, only checks if the steps are defined, without running them
         monochrome = true,  // Makes the console output more readable
-        plugin = {"pretty"}  // Pretty print output
+        plugin = {"pretty","html:target/cucumber-report/reports1.html"}  // Pretty print output
 )
 public class Run {
     
