@@ -7,13 +7,13 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class) // Ensure Cucumber is properly imported here
 @CucumberOptions(
-        features = ".//Features/Demoqa.feature",  // Path to feature file
+        features = {".//Features/testautomationpractice.feature"},  // Path to feature file
         glue = "StepDefinition",  // Package where step definitions are located
-        tags="@tag2",
+        tags="@abcd",
         
         dryRun = false,  // If true, only checks if the steps are defined, without running them
         monochrome = true,  // Makes the console output more readable
-        plugin = {"pretty"}  // Pretty print output
+        plugin = {"pretty","html:target/cucumber-report/reports1.html"}  // Pretty print output
 )
 public class Run {
     

@@ -10,36 +10,22 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class demoqalogin{
+public class demoqalogin {
 	WebDriver  udriver;
-	
+
 	public demoqalogin(WebDriver qdriver){
-		
+
 		udriver = qdriver;
 		PageFactory.initElements(qdriver, this);
-		
-	}
-	
-	@FindBy(xpath="//*[@id=\"app\"]/div/div/div/div[1]/div/div/div[1]/span/div/div[2]")
-	WebElement Elements;
-	public void Element() {
-		//WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\\\"app\\\"]/div/div/div/div[1]/div/div/div[1]/span/div/div[2]/div[2]/svg")));
-		//element.click();
-		//Elements.click();
-		 WebDriverWait wait = new WebDriverWait(udriver,Duration.ofSeconds(10)); // 10 seconds timeout
-	        wait.until(ExpectedConditions.elementToBeClickable(Elements)); // Explicit wait
 
-	        Elements.click(); // Perform the action once the element is clickable
 	}
+
 	
-	@FindBy(xpath="//*[contains(text(), 'Check Box')]")
-	WebElement widgetsbutton;
-	public void widgets() {
-		 WebDriverWait wait = new WebDriverWait(udriver,Duration.ofSeconds(10)); // 10 seconds timeout
-	        wait.until(ExpectedConditions.elementToBeClickable(widgetsbutton)); // Explicit wait
-		widgetsbutton.click();
-	}
 	
+	
+
+
+
 	@FindBy(xpath="//span[@class='rct-checkbox']")
 	WebElement checkbox;
 	public void clickcheckbox() {
@@ -49,7 +35,7 @@ public class demoqalogin{
 	WebElement elementsweb;
 	public void elementwebtable() {
 		WebDriverWait wait = new WebDriverWait(udriver,Duration.ofSeconds(10)); // 10 seconds timeout
-        wait.until(ExpectedConditions.elementToBeClickable(elementsweb)); 
+		wait.until(ExpectedConditions.elementToBeClickable(elementsweb)); 
 		elementsweb.click();
 	}
 	@FindBy(xpath="//*[contains(text(), 'Web Tables')]")
@@ -62,5 +48,5 @@ public class demoqalogin{
 	public void addbutton() {
 		addbuttonweb.click();
 	}
-	
+
 }

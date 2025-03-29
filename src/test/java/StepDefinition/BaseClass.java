@@ -1,21 +1,22 @@
 package StepDefinition;
+
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-
-import PageObject.demoqalogin;
-import io.cucumber.java.en.And;
+import PageObject.LoginPage;
+import PageObject.POtestAutomationPractice;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
-public class Demoqa_stepdef {
+/*Parent class*/
+public class BaseClass {
 	public WebDriver driver;
-	public demoqalogin loginpage;
+	public POtestAutomationPractice autoprac;
 	
 	
 	
 
-	
 }

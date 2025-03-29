@@ -15,14 +15,18 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
+import org.openqa.selenium.devtools.idealized.Javascript;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import ch.qos.logback.core.joran.action.Action;
+import io.cucumber.java.en.And;
 
 public class LoginPage {
 	
@@ -34,19 +38,19 @@ public class LoginPage {
 		PageFactory.initElements(ldriver,this);
 	}
 	
-	@FindBy(xpath="@FindBy(xpath=/html/body/div[2]/header/div[1]/div/ul/li[2]/a")
+	@FindBy(xpath="/html/body/div[2]/header/div[1]/div/ul/li[2]/a")
 	WebElement Signin;
 	
-	@FindBy(xpath="//*[@id=\"loginForm\"]/div[1]/div[1]/div/label/input")
+	@FindBy(xpath="//input[@id='email']")
 	WebElement email;
 	
-	@FindBy(xpath="//*[@id=\"loginForm\"]/div[1]/div[2]/div/label/input")
+	@FindBy(xpath="//input[@title='Password']")
 	WebElement Password;
 	
-	@FindBy(xpath="//*[@id=\"loginForm\"]/div[1]/div[3]")
+	@FindBy(xpath="//*[@id=\"send2\"]/span")
 	WebElement LoginBtn;
 	
-	@FindBy(xpath="https://magento.softwaretestingboard.com/checkout/#shipping")
+	@FindBy(xpath="//*[@id=\"ui-id-4\"]/span[2]")
 	WebElement whatsnew;
 	
 	@FindBy(xpath="//*[@id=\"ui-id-4\"]/span[2]")
@@ -61,31 +65,37 @@ public class LoginPage {
 	@FindBy(linkText="Training")
 	WebElement mendropdown;
 	
-	@FindBy(xpath="//*[@id=\"maincontent\"]/div[4]/div[1]/div[1]/div[3]/div/div/ol/li[2]/div/a/span/span/img")
+	@FindBy(xpath="//*[@id=\"maincontent\"]/div[4]/div[2]/div[2]/div/ul[1]/li[1]/a")
 	WebElement herohoodie;
 	
 	@FindBy(xpath="//*[@id=\"option-label-size-143-item-167\"]")
 	WebElement size;
 	
-	@FindBy(xpath="//*[@id=\"option-label-color-93-item-53\"]")
+	@FindBy(xpath="//*[@id=\"maincontent\"]/div[3]/div[1]/div[3]/ol/li[1]/div/div/div[2]/div[2]/div")
 	WebElement colour;
 	
-	@FindBy(xpath="//*[@id=\"product-addtocart-button\"]/span")
+	@FindBy(xpath="//*[@id=\"maincontent\"]/div[3]/div[1]/div[3]/ol/li[1]/div/div/div[3]/div/div[1]/form/button/span")
 	WebElement addtocart;
 	
-	@FindBy(xpath="/html/body/div[2]/header/div[2]/div[1]/a/span[2]")
+	@FindBy(xpath="/html/body/div[2]/header/div[2]/div[1]/a")
 	WebElement clickcartbutton;
 	
 	@FindBy(xpath="//*[@id=\"top-cart-btn-checkout\"]")
 	WebElement clickonproceedtocheckout;
 	
-	@FindBy(xpath="//*[@id=\"shipping-method-buttons-container\"]/div/button")
+	@FindBy(xpath="/html/body/div[2]/main/div[2]/div/div[2]/div[4]/ol/li[2]/div/div[3]/form/div[3]/div/button")
 	WebElement clickonnext;
+	
+	@FindBy(xpath="/html/body/div[3]/main/div[2]/div/div[2]/div[4]/ol/li[3]/div/form/fieldset/div[1]/div/div/div[2]/div[2]/div[4]/div/button")
+	WebElement clickonplaceorder;
+	
+	
 	
 	public void clickonherohoodie()
 	{
 		herohoodie.click();	
 		}
+	
 	
 	public void selectsize()
 	{
@@ -119,8 +129,8 @@ public class LoginPage {
 	}
 	public void clickonnext()
 	{
-		//WebElement continueButton = ldriver.findElement(By.xpath("//*[@id=\"checkout-step-shipping\"]/div[2]/button/span"));
-		//((JavascriptExecutor) ldriver).executeScript("arguments[0].scrollIntoView(true);", clickonnext);
+		JavascriptExecutor js=(JavascriptExecutor)ldriver;   
+		js.executeScript("window.scrollBy(0,300)");
 		clickonnext.click();
 		//clickonnext.click();
 	}
@@ -142,24 +152,8 @@ public class LoginPage {
 	{
 		
 		LoginBtn.click();
-		//ldriver.findElement(By.xpath("//*[@id=\"mount_0_0_Xp\"]/div/div/div[2]/div/div/div[1]/div[1]/div[1]/section/main/div/div/div/div")).click();
-		ldriver.manage().window().maximize();
-		ldriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"mount_0_0_eQ\"]/div/div/div[2]/div/div/div[1]/div[1]/div[1]/section/main/div/div/div/div")));
-		//WebElement notNowButton = ldriver.findElement(By.xpath("//*[@id=\"mount_0_0_74\"]/div/div/div[2]/div/div/div[1]/div[1]/div[1]/section/main/div/div/section/div/button"));
-       // notNowButton.click();
-		//ldriver.get("https://www.instagram.com/moment__sojo/");
-		ldriver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div/div/div[1]/div[1]/div[2]/div/div/div/div/div[2]/div[8]/div/span/div/a/div/div[1]/div/div/span/img")).click();
 		
-		//WebElement element =ldriver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/div[2]/div/div[10]/div[2]/a/div[1]/div[2]"));
-		//JavascriptExecutor js = (JavascriptExecutor)ldriver;
-		//js.executeScript("window.scrollBy(0,1000)");
-		ldriver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/div[1]/a[2]/div")).click();
-		ldriver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/div[2]/div/div/div[3]/div[1]/div/a/div[2]/div[2]/div/div")).click();
-		//ldriver.switchTo().frame(0);
-		//WebElement element = ldriver.findElement(By.xpath("/html/body/div[5]/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[1]/div/div/div/div/div/div/div/div/div/div[2]/button/div/svg"));
-		/*Actions act = new Actions(ldriver);
-		act.moveToElement(element).perform();*/
+	
 	}
 
 	public void clickonwhatsnewButton()
@@ -167,6 +161,16 @@ public class LoginPage {
 		whatsnew.click();
 	}
 	
+	
+	
+	public void clickonplaceorder()
+	{
+		//WebDriverWait wait = new WebDriverWait(ldriver,Duration.ofSeconds(10));
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/main/div[2]/div/div[2]/div[4]/ol/li[3]/div/form/fieldset/div[1]/div/div/div[2]/div[2]/div[4]/div/button")));
+		Actions actions = new Actions(ldriver);
+		actions.moveToElement(clickonplaceorder).click();
+		//clickonplaceorder.click();
+	}
 
 	public void clickonwomensection() 
 	{
