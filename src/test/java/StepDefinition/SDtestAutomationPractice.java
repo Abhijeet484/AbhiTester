@@ -26,12 +26,7 @@ public class SDtestAutomationPractice extends BaseClass {
 		driver.manage().window().maximize();
 
 	}
-	@When("User opens URL {string}")
-	public void user_opens_url(String url) {
-		driver .get(url);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-
-	}
+	
 	
 	
 	@And("Enter email")

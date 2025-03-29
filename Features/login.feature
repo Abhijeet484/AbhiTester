@@ -1,12 +1,12 @@
 
 Feature: Login
 
-#Background: Steps common for all scenario.
-#Given User launch Chrome browser
- #   When User opens URL "https://magento.softwaretestingboard.com/checkout/#shipping"
-  #  And Click on Sign in link
-   # And User enter Email as "admin@yourstore.com" and password as "Admin@1998"
-    #And Click on Login button
+Background: Steps common for all scenario.
+Given User launch Chrome browser
+    When User opens URL "https://magento.softwaretestingboard.com/checkout/#shipping"
+    And Click on Sign in link
+    And User enter Email as "admin@yourstore.com" and password as "Admin@1998"
+    And Click on Login button
 
 @tag1
 Scenario: Successful Login with Valid Credentials

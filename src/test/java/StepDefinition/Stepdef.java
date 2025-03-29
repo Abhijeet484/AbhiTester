@@ -37,6 +37,12 @@ public class Stepdef  {
 		driver.manage().window().maximize();
 
 	}
+	@When("User opens URL {string}")
+	public void user_opens_url(String url) {
+		driver .get(url);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+	}
 	
 	@And("Click on Sign in link")
 	public void Click_on_sign_in_link() {

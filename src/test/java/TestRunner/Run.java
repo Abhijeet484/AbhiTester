@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
         features = {".//Features/login.feature"},  // Path to feature file
         glue = "StepDefinition",  // Package where step definitions are located
-        tags="@abcd",
+        tags="@sanity",
         
         dryRun = false,  // If true, only checks if the steps are defined, without running them
         monochrome = true,  // Makes the console output more readable
