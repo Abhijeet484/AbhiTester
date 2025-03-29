@@ -100,6 +100,7 @@ public class LoginPage {
 	public void selectsize()
 	{
 		size.click();
+        System.out.print("abhijeet");
 	}
 	
 	public void selectcolour()

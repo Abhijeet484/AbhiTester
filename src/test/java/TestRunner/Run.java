@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class) // Ensure Cucumber is properly imported here
 @CucumberOptions(
-        features = {".//Features/testautomationpractice.feature"},  // Path to feature file
+        features = {".//Features/login.feature"},  // Path to feature file
         glue = "StepDefinition",  // Package where step definitions are located
         tags="@abcd",
         
